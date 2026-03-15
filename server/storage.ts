@@ -116,7 +116,7 @@ export class DatabaseStorage implements IStorage {
 
   async getHackathons(filters: HackathonFilters): Promise<Hackathon[]> {
     if (!db) {
-      return [];
+      throw new Error("Database not configured. Set DATABASE_URL environment variable.");
     }
 
     const conditions = [eq(hackathons.isPublished, true)];
@@ -155,7 +155,7 @@ export class DatabaseStorage implements IStorage {
 
   async getLearningResources(filters: LearningResourceFilters): Promise<LearningResource[]> {
     if (!db) {
-      return [];
+      throw new Error("Database not configured. Set DATABASE_URL environment variable.");
     }
 
     const conditions = [eq(learningResources.isPublished, true)];
@@ -186,7 +186,7 @@ export class DatabaseStorage implements IStorage {
 
   async getBlogPosts(filters: BlogPostFilters): Promise<BlogPost[]> {
     if (!db) {
-      return [];
+      throw new Error("Database not configured. Set DATABASE_URL environment variable.");
     }
 
     const conditions = [eq(blogPosts.isPublished, true)];
