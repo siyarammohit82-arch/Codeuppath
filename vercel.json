@@ -2,12 +2,6 @@
   "version": 2,
   "buildCommand": "VERCEL=1 vite build && node script/build-api.mjs",
   "outputDirectory": "public",
-  "functions": {
-    "api/index.js": {
-      "memory": 1024,
-      "maxDuration": 30
-    }
-  },
   "routes": [
     { "src": "/api/(.*)", "dest": "/api/index.js" },
     { "src": "/sitemap.xml", "dest": "/api/index.js" },
