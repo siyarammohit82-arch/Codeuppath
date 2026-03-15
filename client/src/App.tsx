@@ -11,7 +11,6 @@ import { KeepAlivePing } from "@/components/KeepAlivePing";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import Login from "@/pages/Login";
-import Profile from "@/pages/Profile";
 import Dashboard from "@/pages/Dashboard";
 import Hackathons from "@/pages/Hackathons";
 import HackathonDetails from "@/pages/HackathonDetails";
@@ -42,11 +41,6 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/login" component={Login} />
-      <Route path="/profile">
-        <ProtectedRoute>
-          <Profile />
-        </ProtectedRoute>
-      </Route>
       <Route path="/dashboard">
         <ProtectedRoute>
           <Dashboard />

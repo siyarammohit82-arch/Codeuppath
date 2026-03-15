@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { Link, useLocation } from "wouter";
 import { motion } from "framer-motion";
-import { ChevronDown, LogOut, Menu, User, X } from "lucide-react";
+import { ChevronDown, LogOut, Menu, X } from "lucide-react";
 import logoUrl from "@assets/logo.png";
 import { useAuth } from "@/hooks/use-auth";
 import { navItems, privateNav } from "@/lib/site";
@@ -87,12 +87,6 @@ export function Navbar() {
                   <p className="text-xs text-slate-400">{user?.email}</p>
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator className="bg-white/10" />
-                <DropdownMenuItem asChild className="cursor-pointer text-slate-200 focus:bg-white/10 focus:text-white">
-                  <Link href="/profile" className="flex w-full items-center gap-2">
-                    <User className="h-4 w-4" />
-                    Profile
-                  </Link>
-                </DropdownMenuItem>
                 <DropdownMenuItem
                   onClick={async () => {
                     if (isLoggingOut) {
